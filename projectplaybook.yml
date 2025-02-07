@@ -1,0 +1,22 @@
+---
+- name: first playbook
+    hosts: all
+    become: yes
+    gather_facts: yes
+    tasks:
+      - name: show all gathered gather_facts
+        debug: 
+           var: ansible_facts
+           
+      - name: yum update
+        yum:
+           name: '*'
+           state: latest
+        when: ansible_facts['distribution' in ['Amazon','RedHat']]
+      - name: apt update
+        apt:
+          name: '*'
+          state: latest
+        when: ansible_facts ['distribution' in ['ubuntu']]
+
+
