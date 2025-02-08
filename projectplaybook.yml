@@ -1,6 +1,6 @@
 ---
 - name: first playbook
-    hosts: all
+    host: all
     become: yes
     gather_facts: yes
     tasks:

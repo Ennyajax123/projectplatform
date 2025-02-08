@@ -1,6 +1,6 @@
 ---
 - name: Nginx playbook 
-  hosts: web
+  host: web
   become: yes
   gather_facts: yes
   tasks:
