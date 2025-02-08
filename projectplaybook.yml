@@ -1,6 +1,6 @@
 ---
 - name: first playbook
-    host: all
+    host: Amazon-Web-node
     become: yes
     gather_facts: yes
     tasks:
